@@ -1,0 +1,29 @@
+{
+    "name": "fanly/msgrobot",
+    "description": "message robot to dingding or others",
+    "require": {
+        "guzzlehttp/guzzle": "6.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fanly",
+            "email": "yemeishu@126.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fanly\\Msgrobot\\FanlyMsgrobotServiceProvider"
+            ],
+            "aliases": {
+                "Msgrobot": "Fanly\\Msgrobot\\Facade\\Msgrobot"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Fanly\\Msgrobot\\": "src/"
+        }
+    }
+}
