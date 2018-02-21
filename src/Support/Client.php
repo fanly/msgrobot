@@ -13,8 +13,6 @@ use Psr\Http\Message\ResponseInterface;
 
 class Client {
     public function httpPostJson(string $accesstoken, array $data = []) {
-        info(json_encode($data));
-        info($accesstoken);
         $client = new GuzzleClient();
         $promise = $client->requestAsync('POST',
             'https://oapi.dingtalk.com/robot/send',
@@ -27,10 +25,8 @@ class Client {
             ]);
         $promise->then(
             function (ResponseInterface $res) {
-                info($res->getStatusCode());
             },
             function (RequestException $e) {
-                info($e->getMessage());
             }
         );
         $promise->wait();
